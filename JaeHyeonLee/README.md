@@ -1,1 +1,4 @@
-# Algorithm-CodingTest
+# 1114
+1. 함수
+  - 로직을 담아서 반복 사용
+2. 
