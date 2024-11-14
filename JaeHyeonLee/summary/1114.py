@@ -99,15 +99,67 @@ print(answer) """
 
 
 def find(depth):
-  if depth == 10:
-      print("찾았다")
-      return 
-  print(f"탐색하는 중... 깊이는 {depth}")
+    if depth == 10:
+        print("찾았다")
+        return
+    print(f"탐색하는 중... 깊이는 {depth}")
 
-  find(depth + 1)
+    find(depth + 1)
 
-  print(f"올라가는 중... 깊이는 {depth}")
+    print(f"올라가는 중... 깊이는 {depth}")
 
 
-find(0)
+# find(0)
 # endregion
+
+
+# region 피보나치 수열
+""" 
+import sys
+
+input = sys.stdin.readline
+
+n = int(input())
+
+
+def fibo(num):
+    if num <= 1:
+        return num
+    return fibo(num - 1) + fibo(num - 2)
+
+print(fibo(n))
+
+ """
+
+
+# endregion
+
+# region 피보나치 수열 중간 연산 저장 ver, 메모이제이션
+
+
+import sys
+
+input = sys.stdin.readline
+
+n = int(input())
+memo = [0, 1]
+
+for _ in range(n - 1):
+    memo.append(memo[-1] + memo[-2])
+
+print(memo[n])
+
+
+# endregion 다이나믹 프로그래밍 
+
+
+#region 이진탐색
+"""
+절반으로 나누면서 탐색
+탐색을 하면서 절만의 범위만 탐색
+1. 정렬된 리스트
+2. 정렬된 특정 범위
+"""
+
+
+#endregion
