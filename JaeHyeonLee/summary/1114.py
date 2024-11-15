@@ -136,7 +136,7 @@ print(fibo(n))
 
 # region 피보나치 수열 중간 연산 저장 ver, 메모이제이션
 
-
+""" 
 import sys
 
 input = sys.stdin.readline
@@ -149,11 +149,11 @@ for _ in range(n - 1):
 
 print(memo[n])
 
+ """
+# endregion 다이나믹 프로그래밍
 
-# endregion 다이나믹 프로그래밍 
 
-
-#region 이진탐색
+# region 이진탐색
 """
 절반으로 나누면서 탐색
 탐색을 하면서 절만의 범위만 탐색
@@ -162,4 +162,54 @@ print(memo[n])
 """
 
 
-#endregion
+# endregion
+
+# region SWEA 4839
+import sys
+
+input = sys.stdin.readline
+
+T = int(input())
+
+
+def binary_search(l, r, t, d):
+    # 가운데 찾기
+    c = int((l + r) / 2)
+
+    # c == target
+    if c == t:
+        # return 탐색횟수
+        return d
+
+    # c > target
+    elif c > t:
+        # 왼쪽 절반으로 재귀(r을 갱신)
+        return binary_search(l, c - 1, t, d + 1)
+
+    # c < target
+    elif c < t:
+        # 오른쪽 절반으로 재귀(l을 갱신)
+        return binary_search(c + 1, r, t, d + 1)
+
+
+def binary_search_2(l, r, t, d):
+    while True:
+        c = int((l + r) / 2)
+
+        if c == t:
+            return d
+        elif c > t:
+            r = c - 1
+        elif c < t:
+            l = c + 1
+        d += 1
+
+
+for tc in range(1, T + 1):
+    p, a, b = map(int, input().split())
+    A = binary_search_2(1, p, a, 0)
+    B = binary_search_2(1, p, b, 0)
+
+    print("A" if A < B else "B" if B < A else 0)
+
+# endregion
