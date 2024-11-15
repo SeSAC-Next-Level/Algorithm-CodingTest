@@ -209,7 +209,9 @@ for tc in range(1, T + 1):
     p, a, b = map(int, input().split())
     A = binary_search_2(1, p, a, 0)
     B = binary_search_2(1, p, b, 0)
-
+# 삼항연산자
+# A < B 면 "A" 아니라면 한번더 삼항연산자
+# B < A 면 "B" 아니라면 0
     print("A" if A < B else "B" if B < A else 0)
 
 # endregion
