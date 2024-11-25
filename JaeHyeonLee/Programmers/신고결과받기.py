@@ -8,7 +8,7 @@ k번 이상 신고된 유저 게시판 정지
 
 한꺼번에 정지 시킨후 메일 발송
 
---------------
+####################
 입력값 
 
 id_list: 모든 유저 정보
@@ -24,8 +24,9 @@ report : 신고자 피신고자
 즉, 신고자에게 알림 메일을 보내야 하는 횟수
 피신고자가 정지 되었을때 마다
 신고자의 메일카운트 증가
-"""
-"""이용자 신고자를 어떻게 식별?
+
+###############
+이용자 신고자를 어떻게 식별?
 
 set으로 중복 신고 제거
 이용자 신고자 남아있음
@@ -53,12 +54,10 @@ set으로 중복 신고 제거
 # region 풀이
 
 
-# endregion
+
 id_list = ["muzi", "frodo", "apeach", "neo"]
 report = ["muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"]
 k = 2
-
-
 
 
 def solution(id_list, report, k):
@@ -85,3 +84,4 @@ def solution(id_list, report, k):
 
 
 print(solution(id_list, report, k))
+# endregion
