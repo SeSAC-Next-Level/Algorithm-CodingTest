@@ -25,18 +25,6 @@ report : 신고자 피신고자
 피신고자가 정지 되었을때 마다
 신고자의 메일카운트 증가
 """
-
-
-# endregion
-
-# region 풀이
-
-
-# endregion
-id_list = ["muzi", "frodo", "apeach", "neo"]
-report = ["muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"]
-k = 2
-
 """이용자 신고자를 어떻게 식별?
 
 set으로 중복 신고 제거
@@ -59,6 +47,18 @@ set으로 중복 신고 제거
 
   
 """
+
+# endregion
+
+# region 풀이
+
+
+# endregion
+id_list = ["muzi", "frodo", "apeach", "neo"]
+report = ["muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"]
+k = 2
+
+
 
 
 def solution(id_list, report, k):
