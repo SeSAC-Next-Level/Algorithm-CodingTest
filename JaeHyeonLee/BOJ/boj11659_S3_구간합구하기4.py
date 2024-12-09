@@ -25,22 +25,24 @@ import sys
 
 input = sys.stdin.readline
 
+
 N, M = map(int, input().split())
-nums = list(map(int, input().split()))
+lst = list(map(int, input().split()))
 acc_lst = [0]
-for n in nums:
-  acc_lst.append(acc_lst[-1] + n)
-  
-for i in range(M):
-  i, j = map(int, input().split())
-  print(acc_lst[j] - acc_lst[i - 1])
+for i in range(N):
+    acc_lst.append(acc_lst[-1] + lst[i])
+
+
+for _ in range(M):
+    start, end = map(int, input().split())
+    print(acc_lst[end] - acc_lst[start - 1])
 
 # endregion
 
 # region 깨달은 점
-'''
+"""
 그림을 그리면 어느 인덱스에 -1을 해야하는지 빠르게 파악가능
-'''
+"""
 
 
 # endregion
