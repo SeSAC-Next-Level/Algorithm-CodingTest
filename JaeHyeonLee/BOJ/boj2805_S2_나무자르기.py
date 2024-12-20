@@ -94,3 +94,80 @@ while l <= r:  # 같다면 M과 딱 맞는 지점
     c = (l + r) // 2
     
 print(c)
+
+
+'''
+내가 직접 품
+
+입력 값
+4 7
+20 15 10 17
+
+# region 문제정리
+"""
+절단기의 높이 지상으로 부터 H 만큼
+
+나무 크기 < H  : 안잘림
+나무 크기 >= H : 잘림
+
+
+
+나무 수(N)
+필요한 만큼 가져간다
+필요한 만큼(M) 가져갈수 있는 H 구하기
+적어도 M 을 가져갈 수 있는 H 구하기
+M에 가장 가까운 H
+
+M보다 같거나 커야함
+"""
+# endregion
+
+# region 풀이
+
+import sys
+input=sys.stdin.readline
+
+
+
+def binary_search(l, r):
+    H = (l + r) // 2
+    tmp = 0
+    # 나무를 하나씩 꺼내서
+    for tree in trees:
+        # H 만큼 자른다
+        # 자른 값을 tmp에 더한다
+        if tree > H:
+            tmp += tree - H
+    # 만약 tmp == M 이면 H 리턴 종료
+    if l > r or tmp == M:
+        return H
+    # 만약 tmp < M H를 줄여야함
+    elif tmp < M:
+        r = H - 1
+    # 만약 tmp > M H 줄여야 함
+    elif tmp > M:
+        l = H + 1
+    return binary_search(l, r)
+        
+        
+# 입력값 받기
+# N 나무 수, M 필요한 나무길이의 합(목표)
+N, M = map(int, input().split())
+
+# 나무 길이: 리스트
+trees = list(map(int, input().split()))
+# H를 어떻게 정하지?
+# 문제에 숫자 범위 있음
+l, r = 1, 1_000_000_000
+
+
+print(binary_search(l, r))
+
+# endregion
+
+
+
+
+
+
+'''
