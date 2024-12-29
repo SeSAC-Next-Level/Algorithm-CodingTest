@@ -114,3 +114,4 @@
             - 단점
             - 어려운 유지보수와 디버깅
             - 실행 순서가 정해져 있으므로 코드의 순서가 바뀌면 동일한 결과를 보장하기 어려움
+              <img src = "https://github.com/user-attachments/assets/6d26cee6-3741-47f5-91b6-8c49cb1bb2a2" width="500" height="400"> <img src ="https://github.com/user-attachments/assets/bbddb860-9240-4f16-92c2-7bd1e7ae9fb7" width="500" height="400">
