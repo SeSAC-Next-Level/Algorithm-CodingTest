@@ -99,10 +99,10 @@ print(adj_lst)
 for _ in range(E):
     s, e, w = map(int, input().split())
     # s, e = map(int, input().split())
-    # adj_lst[s].append(s) # 단방향
-    # adj_lst[s].append(e) # 양방향
-    adj_lst[s].append((w, s))  # 단방향
-    adj_lst[s].append((w, e))  # 양방향
+    # adj_lst[s].append(e) # 단방향
+    # adj_lst[e].append(s) # 양방향
+    adj_lst[s].append((w, e))  # 단방향
+    adj_lst[e].append((w, s))  # 양방향
     """
 # endregion
 
